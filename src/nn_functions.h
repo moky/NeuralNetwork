@@ -26,4 +26,9 @@ nn_value nn_activation(nn_soma * soma);
 //
 void nn_pulse(nn_axon * axon, nn_value activation);
 
+//
+// calculate with neuron (one tick)
+//
+void nn_calculate(nn_neuron * neuron);
+
 #endif /* nn_functions_h */

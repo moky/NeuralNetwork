@@ -24,12 +24,15 @@ typedef float nn_value;
 struct _nn_dendrite;
 struct _nn_soma;
 struct _nn_axon;
+struct _nn_neuron;
 
 typedef nn_value (*nn_dendrite_evaluate)(struct _nn_dendrite * dendrite);
 
 typedef nn_value (*nn_nucleus_activation)(struct _nn_soma * soma);
 
 typedef void (*nn_axon_pulse)(struct _nn_axon * axon, nn_value activation);
+
+typedef void (*nn_neuron_calculate)(struct _nn_neuron * neuron);
 
 
 // Synapse is connected with a terminal on one neuron's axon,
@@ -81,6 +84,9 @@ typedef struct _nn_neuron {
 	nn_soma soma; // body
 	
 	nn_axon axon; // tail
+	
+	// tick
+	nn_neuron_calculate calculate;
 	
 } nn_neuron;
 

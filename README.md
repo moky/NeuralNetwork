@@ -2,4 +2,4 @@
 
 ![Neuron][neuron.png]
 
-[neuron.png]: images/neuron.png
+[neuron.png]: images/neuron.png "Neuron"
